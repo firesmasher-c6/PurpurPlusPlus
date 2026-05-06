@@ -9,8 +9,8 @@ An optimized .zip for PurpurMC servers.
 - **Auto ClearLag** false by default on /plugins/OptiCore/OptiCore.yml
 
 ## Commands
-- `/ppp reload`: Reloads the configuration.
-- `/ppp purge`: Clears entities to free up server RAM.
+- `/oc reload`: Reloads the configuration.
+- `/oc purge`: Clears entities to free up server RAM.
 - `/tps`: Displays system health.
 - `/playerlist`: Lets you check if players are on bedrock or java.
 - `/playerlist enable` : Enables /playerlist checking.
