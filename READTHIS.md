@@ -1,4 +1,3 @@
-# These Are  Called Optimizers But These Are Monitor!
 # spigot-skript.yml: 
     # OptiCoreMC: Spigot Optimization Profile
         settings:
