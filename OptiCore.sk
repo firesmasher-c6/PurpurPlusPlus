@@ -1,6 +1,6 @@
 # ----------------------------------------------------
 # OptiCore | Optimized Server Pack
-# Build #7 [STABLE]
+# Build #8 [STABLE]
 # ----------------------------------------------------
 
 function loadOCConfig():
@@ -123,7 +123,7 @@ command /tps:
 command /version:
     permission: op
     trigger:
-        send "You are currently running &bOptiCore &fBuild 7"
+        send "You are currently running &bOptiCore &fBuild 8"
         send "&7Note: &bOptiCore &ris an optimizer and not a server..."
 
 command /ver:
@@ -132,6 +132,5 @@ command /ver:
         execute player command "/version"
 
 command /discord:
-    permission: op
     trigger:
         send "&bDiscord: &rYOUR_LINK_HERE"
