@@ -10,10 +10,8 @@ This branch contains the standalone **World Geometry & Logic** optimizations for
 * **Chunk Gen Boost:** Optimized noise-router calls to reduce CPU overhead during exploration.
 
 ## 🛠 Installation
-1. Download the `data` folder and `pack.mcmeta`.
-2. Place them into a folder named `OptiCore-Terrain`.
-3. Drop the folder into your server's `/world/datapacks/` directory.
-4. Restart your server or type `/reload`.
+1. Download the .zip file containing the datapack.
+2. Upload to world/datapacks/
 
 ## ✅ Compatibility
 * **Server:** PurpurMC (Recommended), PaperMC, or Spigot.
