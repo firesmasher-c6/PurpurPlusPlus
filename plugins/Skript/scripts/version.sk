@@ -1,0 +1,63 @@
+import:
+    java.net.URL
+    java.util.Scanner
+    org.bukkit.Bukkit
+
+options:
+    # LOCAL BUILD INFO
+    curr_ver: 26.1.2
+    curr_build: 9
+    
+    # YOUR EXACT URLS
+    url_purpur: "https://raw.githubusercontent.com/firesmasher-c6/OptiCore/refs/heads/Purpur/DivineMC/version.txt"
+    url_paper: "https://raw.githubusercontent.com/firesmasher-c6/OptiCore/refs/heads/Paper/Leaf/Leaves/Pufferfish/version.txt"
+
+command /version:
+    aliases: /ver
+    permission: opticore.version
+    trigger:
+        # Get Software Name
+        set {_soft} to Bukkit.getServer().getName()
+        
+        # Branch detection logic
+        if {_soft} contains "Purpur" or "DivineMC":
+            set {_target} to {@url_purpur}
+        else:
+            set {_target} to {@url_paper}
+            
+        # --- THE STABLE JAVA CHECK ---
+        set {_url} to new URL({_target})
+        set {_is} to {_url}.openStream()
+        set {_s} to new Scanner({_is})
+        if {_s}.hasNext():
+            set {_line} to {_s}.next()
+        {_s}.close()
+        {_is}.close()
+        
+        # Split the data from GitHub (Expected: 26.1.2|Software|9)
+        set {_data::*} to {_line} split at "|"
+        
+        # --- THE REQUESTED OUTPUT ---
+        send "&b&lOptiCoreMC &fSystem Information"
+        send "&7&m--------------------------------"
+        send "&3Server Software:&f %{_soft}%"
+        send "&3Version:&f {@curr_ver}"
+        send "&3OptiCore Build:&f {@curr_build}"
+        
+        # Comparison logic for the admin
+        if {_data::1} is not "{@curr_ver}":
+            send ""
+            send "&c✘ VERSION OUTDATED! &7(Latest: &b%{_data::1}%&7)"
+        else if {_data::3} is not "{@curr_build}":
+            send ""
+            send "&e⚠ NEW BUILD AVAILABLE! &7(Latest Build: &b##%{_data::3}%&7)"
+        else:
+            send ""
+            send "&a✔ Software is up to date."
+            
+        send "&7&m--------------------------------"
+
+command /ver:
+    permission: op
+    trigger:
+        execute player command "version"

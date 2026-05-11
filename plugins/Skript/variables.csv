@@ -1,0 +1,19 @@
+# === Skript's variable storage ===
+# Please do not modify this file manually!
+#
+# version: 2.15.2
+
+deaths.89b409b7-a772-376a-b04c-a309a5c69ef0, long, 000000000000000C
+fly.vl.89b409b7-a772-376a-b04c-a309a5c69ef0, long, 0000000000000000
+fly.vl.b3c1d632-b530-3221-a39d-40c773de4659, long, 0000000000000000
+gamerule_active, boolean, 01
+network::enabled, boolean, 00
+oc::auto_clearlag, boolean, 00
+opti::enabled, boolean, 01
+opti::tps-threshold, integer, 00000012
+session.start.89b409b7-a772-376a-b04c-a309a5c69ef0, date, 810974696D657374616D70040000019E165581DB
+session.start.b3c1d632-b530-3221-a39d-40c773de4659, date, 810974696D657374616D70040000019E15F33B19
+stats.deaths::89b409b7-a772-376a-b04c-a309a5c69ef0, long, 0000000000000000
+stats.kills::89b409b7-a772-376a-b04c-a309a5c69ef0, long, 0000000000000000
+stats.playtime::89b409b7-a772-376a-b04c-a309a5c69ef0, long, 0000000000000000
+

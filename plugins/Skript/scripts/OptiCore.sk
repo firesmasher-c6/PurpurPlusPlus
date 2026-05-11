@@ -1,6 +1,6 @@
 # ----------------------------------------------------
 # OptiCore | Optimized Server Pack
-# Build #8 [STABLE]
+# Build #9 [STABLE]
 # ----------------------------------------------------
 
 function loadOCConfig():
@@ -119,17 +119,6 @@ command /tps:
     permission: opticore.admin
     trigger:
         execute player command "/oc tps"
-
-command /version:
-    permission: op
-    trigger:
-        send "You are currently running &bOptiCore &fBuild 8"
-        send "&7Note: &bOptiCore &ris an optimizer and not a server..."
-
-command /ver:
-    permission: op
-    trigger:
-        execute player command "/version"
 
 command /discord:
     trigger:

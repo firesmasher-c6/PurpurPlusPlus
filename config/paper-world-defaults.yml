@@ -73,6 +73,10 @@ collisions:
 command-blocks:
   force-follow-perm-level: true
   permissions-level: 2
+datapacks:
+  max-tnt-per-tick: 0
+  vanilla-command-permission-level:
+    dialog: true
 entities:
   armor-stands:
     do-collision-entity-lookups: true

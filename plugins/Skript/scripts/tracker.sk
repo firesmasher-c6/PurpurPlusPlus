@@ -1,0 +1,57 @@
+import:
+    org.bukkit.Bukkit
+
+on load:
+    load yaml "plugins/OptiCore/tracker.yml" as "trackerfile"
+    if yaml "trackerfile" is empty:
+        set yaml value "enabled" from "trackerfile" to false
+        save yaml "trackerfile"
+
+command /chunktracker <text>:
+    permission: opticore.admin
+    trigger:
+        if arg-1 is "on":
+            set yaml value "enabled" from "trackerfile" to true
+            save yaml "trackerfile"
+            send "&7[&bOptiCore&7] &aChunk Tracker enabled."
+        else if arg-1 is "off":
+            set yaml value "enabled" from "trackerfile" to false
+            save yaml "trackerfile"
+            send "&7[&bOptiCore&7] &cChunk Tracker disabled."
+
+command /chunks:
+    permission: opticore.admin
+    trigger:
+        if yaml value "enabled" from "trackerfile" is false:
+            send "&7[&bOptiCore&7] &cPlease do &b/chunktracker on &cfirst."
+            send "&7&oNote: This feature can steal CPU + RAM but is a good diagnostic tool."
+            stop
+
+        send "&b&lOptiCore &fActive Regions &7(.mca)"
+        send "&7&m--------------------------------"
+
+        loop all worlds:
+            loop loaded chunks of loop-world:
+                # Direct Java access to avoid the "not a location" error
+                set {_x} to loop-chunk.getX()
+                set {_z} to loop-chunk.getZ()
+                
+                # Math for .mca region files
+                # Region = floor(ChunkCoord / 32)
+                set {_rx} to floor({_x} / 32)
+                set {_rz} to floor({_z} / 32)
+                set {_region} to "r.%{_rx}%.%{_rz}%.mca"
+                
+                # Count entities
+                set {_e} to size of entities in loop-chunk
+                add {_e} to {_results::%{_region}%}
+                add 1 to {_total}
+
+        if size of {_results::*} is 0:
+            send "&cNo chunks loaded."
+        else:
+            loop {_results::*}:
+                send "&3File: &b%loop-index% &8| &f%loop-value% &7Entities"
+        
+        send "&7&m--------------------------------"
+        send "&7Total Loaded Chunks: &f%{_total}%"
