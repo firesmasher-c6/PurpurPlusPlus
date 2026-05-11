@@ -1,4 +1,4 @@
-# OptiCore Build #1 Paper
+# OptiCore Build #9 Paper
 
 An optimized .zip for Paper/Leaf/Leaves/Pufferfish servers.
 
