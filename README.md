@@ -1,5 +1,5 @@
-# OptiCore Build #8
-An optimized .zip for PurpurMC servers.
+# OptiCore Build #9
+An optimized .zip for minecraft servers.
 
 ## Features
 - **Health Monitoring:** Real-time TPS and MSPT tracking.
