@@ -7,7 +7,7 @@ An optimized .zip for minecraft servers.
 - **Optimized:** Plug & Play pack. Edited spigot.yml, purpur.yml, paper-global.yml, paper-world-default.yml, and bukkit.yml.
 - **Auto ClearLag** false by default on /plugins/OptiCore/OptiCore.yml
 - **AntiCheat** A smart feature but it is turned off by default
-- **Chunk Tracker** A feature that checks active regions and chunks. It displays what chunk has the most entities (False By Deafult)
+- **Chunk Tracker** A feature that checks active regions and chunks. It displays what chunk has the most entities (False By Default)
 
 ## Commands
 - `/oc reload`: Reloads the configuration.
