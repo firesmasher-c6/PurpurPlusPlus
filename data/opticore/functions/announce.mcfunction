@@ -1,0 +1,1 @@
+tellraw @a {"text":"","extra":[{"text":"[OptiCoreMC] ","color":"green","bold":true},{"text":"Terrain & Systems Loaded Successfully!","color":"white","bold":false}]}
